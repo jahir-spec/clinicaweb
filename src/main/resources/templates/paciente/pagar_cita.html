@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pagar Cita</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <h2 class="mb-3">Pagar Cita</h2>
+
+        <p><strong>Médico:</strong> <span th:text="${cita.medico.usuario.nombre} + ' ' + ${cita.medico.usuario.apellido}"></span></p>
+        <p><strong>Fecha:</strong> <span th:text="${cita.fecha}"></span></p>
+        <p><strong>Hora:</strong> <span th:text="${cita.hora}"></span></p>
+        <p><strong>Monto:</strong> 100.0</p>
+
+        <form th:action="@{'/paciente/citas/pagar/' + ${cita.idCita} + '/guardar'}" method="post">
+            <div class="mb-3">
+                <label class="form-label">Método de Pago</label>
+                <select class="form-select" name="metodo">
+                    <option th:each="m : ${metodos}" th:value="${m}" th:text="${m}"></option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-success">Pagar</button>
+            <a href="/paciente/citas" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

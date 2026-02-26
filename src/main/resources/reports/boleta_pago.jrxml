@@ -1,0 +1,64 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="boleta_pago" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="499a719d-173e-4a4d-830f-567d633330aa">
+	<query language="sql"><![CDATA[]]></query>
+	<field name="pacienteNombre" class="java.lang.String"/>
+	<field name="medicoNombre" class="java.lang.String"/>
+	<field name="fechaPago" class="java.lang.String"/>
+	<field name="monto" class="java.lang.Double"/>
+	<field name="metodoPago" class="java.lang.String"/>
+	<background splitType="Stretch"/>
+	<title height="138" splitType="Stretch">
+		<element kind="staticText" uuid="3b84ab3f-f600-4920-9c79-8d83e9632150" x="180" y="20" width="240" height="96" fontSize="25.0">
+			<text><![CDATA[Boleta de Pago]]></text>
+		</element>
+	</title>
+	<columnHeader height="61" splitType="Stretch">
+		<element kind="staticText" uuid="eadcbac8-4fd7-4f9f-9165-fe6c534d370a" x="-11" y="-10" width="100" height="30">
+			<text><![CDATA[pacienteNombre]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17b0f61b-83a2-450b-8556-23ceadebf4c0"/>
+		</element>
+		<element kind="staticText" uuid="7cea0b95-9b61-470d-a592-a95781187381" x="100" y="-12" width="100" height="30">
+			<text><![CDATA[medicoNombre]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="09f341e0-a3f4-4563-a930-27954f619a6c"/>
+		</element>
+		<element kind="staticText" uuid="140bdfc3-c386-48ee-8b68-5c4855fa0e45" x="210" y="-12" width="100" height="30">
+			<text><![CDATA[fechaPago]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24432858-66c9-42db-93cc-282e0efbffc0"/>
+		</element>
+		<element kind="staticText" uuid="89454803-8368-4232-ac2b-a6ac1189c2ee" x="330" y="-12" width="100" height="30">
+			<text><![CDATA[monto]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="99ddc4f8-9b3f-4c94-85b3-51f4fe202fa3"/>
+		</element>
+		<element kind="staticText" uuid="ee6caee6-9725-4912-88cd-5551fd9d12ec" x="460" y="-12" width="100" height="30">
+			<text><![CDATA[metodoPago]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3ce1b917-780e-47bc-b14b-e3c0dc137a2e"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<element kind="textField" uuid="77a4b91e-f009-4e40-9261-ac6e2fe5513f" x="0" y="47" width="100" height="30">
+				<expression><![CDATA[$F{pacienteNombre}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17b0f61b-83a2-450b-8556-23ceadebf4c0"/>
+			</element>
+			<element kind="textField" uuid="f0a62faf-cf61-4b40-b470-f8bc36fd7ab1" x="100" y="50" width="100" height="30">
+				<expression><![CDATA[$F{medicoNombre}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="09f341e0-a3f4-4563-a930-27954f619a6c"/>
+			</element>
+			<element kind="textField" uuid="9cb15668-e5dd-4f30-a5ac-6ca1a8b7d8c6" x="200" y="50" width="100" height="30">
+				<expression><![CDATA[$F{fechaPago}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24432858-66c9-42db-93cc-282e0efbffc0"/>
+			</element>
+			<element kind="textField" uuid="eab8b379-b8f1-4d9c-865d-8559caf1506e" x="320" y="50" width="100" height="30">
+				<expression><![CDATA[$F{monto}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="99ddc4f8-9b3f-4c94-85b3-51f4fe202fa3"/>
+			</element>
+			<element kind="textField" uuid="075feef8-3ad3-4f69-bf63-1a7e308d88ff" x="450" y="50" width="100" height="30">
+				<expression><![CDATA[$F{metodoPago}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3ce1b917-780e-47bc-b14b-e3c0dc137a2e"/>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

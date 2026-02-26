@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard Médico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+
+        <a class="navbar-brand" href="#">Sistema</a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMedico">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMedico">
+
+            <ul class="navbar-nav me-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/medico/dashboard">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/medico/citas">Mis citas</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/medico/citas-hoy">Citas de hoy</a>
+                </li>
+				<li class="nav-item"><a class="nav-link" href="/medico/perfil">Mi Perfil</a></li>
+            </ul>
+
+            <form th:action="@{/logout}" method="post" class="d-flex">
+                <button class="btn btn-outline-light">Cerrar sesión</button>
+            </form>
+
+        </div>
+    </div>
+</nav>
+
+
+<div class="container mt-5">
+
+    <div class="card shadow-lg p-4">
+
+        <h2 class="mb-3">
+            Bienvenido Dr(a).
+            <span sec:authentication="name"></span>
+        </h2>
+
+        <p>Seleccione una opción:</p>
+
+        <div class="row mt-4">
+
+            <!-- VER TODAS LAS CITAS -->
+            <div class="col-md-4">
+                <div class="card text-center shadow">
+                    <div class="card-body">
+                        <h5>Ver mis citas</h5>
+                        <a href="/medico/citas" class="btn btn-primary mt-3">Ingresar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CITAS DE HOY -->
+            <div class="col-md-4">
+                <div class="card text-center shadow">
+                    <div class="card-body">
+                        <h5>Citas de hoy</h5>
+                        <a href="/medico/citas-hoy" class="btn btn-success mt-3">Ingresar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERFIL -->
+            <div class="col-md-4">
+                <div class="card text-center shadow">
+                    <div class="card-body">
+                        <h5>Mi perfil</h5>
+                        <a href="/medico/perfil" class="btn btn-warning mt-3">Ingresar</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
